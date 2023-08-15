@@ -17,7 +17,9 @@ if [[ -f "${CERT_FILE}" && -f "${KEY_FILE}" ]]; then
     NOTEBOOK_ARGS="--keyfile=${KEY_FILE} ${NOTEBOOK_ARGS}"
 
     mkdir -p ${HOME}/.local/share/code-server
+    rm -f ${HOME}/.local/share/code-server/localhost.crt
     ln -s ${CERT_FILE} ${HOME}/.local/share/code-server/localhost.crt
+    rm -f ${HOME}/.local/share/code-server/localhost.key
     ln -s ${KEY_FILE} ${HOME}/.local/share/code-server/localhost.key
     CODE_SERVER_ARGS="--cert ${CODE_SERVER_ARGS}"
 fi
