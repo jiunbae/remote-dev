@@ -142,7 +142,6 @@ RUN ex +'%s/^#\zeListenAddress/\1/g' -scwq /etc/ssh/sshd_config
 RUN ex +'%s/^#\zeHostKey .*ssh_host_.*_key/\1/g' -scwq /etc/ssh/sshd_config
 RUN sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 RUN RUNLEVEL=1 dpkg-reconfigure openssh-server
-RUN ssh-keygen -A -v
 RUN update-rc.d ssh defaults
 
 # Configure sudo.
