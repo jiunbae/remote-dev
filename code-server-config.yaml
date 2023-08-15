@@ -1,0 +1,4 @@
+bind-addr: 0.0.0.1:8443
+auth: password
+password: d42f95bf665da4b863065709
+cert: false
